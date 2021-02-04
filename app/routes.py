@@ -5,4 +5,14 @@ from app import flask_app
 @flask_app.route('/index')
 def index():
     user = {'username': 'User1'}
-    return render_template('index.html', user=user)
+    posts = [
+        {
+            'author': {'username': 'User2'},
+            'body': 'Body of post from author User2'
+        },
+        {
+            'author': {'username': 'User3'},
+            'body': 'Body of post from author User3'
+        }
+    ]
+    return render_template('index.html', title='Homepage', user=user, posts=posts)
