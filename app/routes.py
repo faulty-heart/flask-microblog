@@ -23,7 +23,7 @@ def index():
             'body': 'Body of post from author User3'
         }
     ]
-    return render_template('index.html', title='Homepage', user=user, posts=posts)
+    return render_template('index.html', title='Homepage', posts=posts)
 
 @flask_app.route('/login', methods=['GET', 'POST'])
 def login():
