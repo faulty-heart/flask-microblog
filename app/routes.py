@@ -4,9 +4,11 @@ from app.forms import LoginForm
 from flask_login import current_user, login_user
 from app.models import User
 from flask_login import logout_user
+from flask_login import login_required
 
 @flask_app.route('/')
 @flask_app.route('/index')
+@login_required
 def index():
     user = {'username': 'User1'}
     posts = [
